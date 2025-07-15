@@ -28,6 +28,6 @@ public class GlobalExceptionHandler {
     public ResponseEntity<?> handleOtherExceptions(Exception ex) {
         return ResponseEntity
                 .status(HttpStatus.INTERNAL_SERVER_ERROR)
-                .body(Map.of("error", "Unexpected error occurred."));
+                .body(Map.of("error", "Unexpected error occurred." + ex.getMessage()));
     }
 }
